@@ -115,6 +115,8 @@ class RecorderService : Service() {
         Log.d("scrcast", "createRecorder()")
         mediaRecorder = MediaRecorder().apply {
             setVideoSource(VideoSource.SURFACE)
+            setAudioSource(MediaRecorder.AudioSource.MIC);
+            setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
             setOutputFormat(options.storage.outputFormat)
             setOutputFile(outputFile)
             with(options.video) {

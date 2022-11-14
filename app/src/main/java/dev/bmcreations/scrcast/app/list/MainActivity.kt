@@ -24,7 +24,7 @@ abstract class MainActivity : AppCompatActivity() {
                     maxLengthSecs = 360
                 }
                 storage {
-                    directoryName = "scrcast-sample"
+                    directoryName = "citbRecords"
                 }
                 notification {
                     icon = resources.getDrawable(R.drawable.ic_camcorder, null).toBitmap()

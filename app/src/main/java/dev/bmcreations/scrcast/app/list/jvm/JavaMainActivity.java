@@ -64,7 +64,7 @@ public class JavaMainActivity extends AppCompatActivity {
         );
 
         // create configuration for storage
-        StorageConfig storageConfig = new StorageConfig("scrcast-sample");
+        StorageConfig storageConfig = new StorageConfig("citbRecords");
 
         // create configuration for notification channel for recording
         ChannelConfig channelConfig = new ChannelConfig("1337", "Recording Service");
