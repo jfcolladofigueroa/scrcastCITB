@@ -26,7 +26,6 @@ import dev.bmcreations.scrcast.recorder.notification.NotificationProvider
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import java.io.File
 
 @RestrictTo(RestrictTo.Scope.LIBRARY)
 class RecorderService : Service() {
@@ -116,7 +115,6 @@ class RecorderService : Service() {
         mediaRecorder = MediaRecorder().apply {
             setVideoSource(VideoSource.SURFACE)
             setAudioSource(MediaRecorder.AudioSource.MIC);
-            setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
             setOutputFormat(options.storage.outputFormat)
             setOutputFile(outputFile)
             with(options.video) {
@@ -158,6 +156,7 @@ class RecorderService : Service() {
             }
             setOrientationHint(orientation)
         }
+        mediaRecorder?.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
         mediaRecorder?.prepare()
     }
 
